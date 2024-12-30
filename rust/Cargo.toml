@@ -1,0 +1,15 @@
+[package]
+name = "yolo_self"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tch = {version = "0.18.1"}
+winapi = {version = "0.3.9", features = ["libloaderapi"]}
+ort = { version = "2.0.0-rc.9", features = [ "cuda" ] }
+image = "0.25.5"
+imageproc = "0.25.0"
+ab_glyph = "0.2.29"
+ndarray = "0.16"
