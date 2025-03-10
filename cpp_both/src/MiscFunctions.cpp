@@ -87,19 +87,19 @@ std::vector<int> nms(const std::vector<std::vector<float>>& boxes,
 wchar_t* string_to_wchart(const std::string str)
 {
     int len = MultiByteToWideChar(
-        CP_UTF8,            // Ô´×Ö·û´®±àÂë£¨UTF-8£©
-        0,                  // ±êÖ¾£¨Í¨³£Îª0£©
-        str.c_str(),        // Ô´×Ö·û´®
-        -1,                 // ×Ô¶¯¼ÆËã³¤¶È£¨º¬ÖÕÖ¹·û£©
-        nullptr,            // Ä¿±ê»º³åÇø£¨ÉèÎªnullptr»ñÈ¡³¤¶È£©
+        CP_UTF8,            // æºå­—ç¬¦ä¸²ç¼–ç ï¼ˆUTF-8ï¼‰
+        0,                  // æ ‡å¿—ï¼ˆé€šå¸¸ä¸º0ï¼‰
+        str.c_str(),        // æºå­—ç¬¦ä¸²
+        -1,                 // è‡ªåŠ¨è®¡ç®—é•¿åº¦ï¼ˆå«ç»ˆæ­¢ç¬¦ï¼‰
+        nullptr,            // ç›®æ ‡ç¼“å†²åŒºï¼ˆè®¾ä¸ºnullptrè·å–é•¿åº¦ï¼‰
         0
     );
     if (len == 0) {
-        std::cout << "×Ö·û´®³¤¶ÈÎª0£¡";
+        std::cout << "å­—ç¬¦ä¸²é•¿åº¦ä¸º0ï¼";
         return nullptr;
     }
     wchar_t* buffer = new wchar_t[len];
-    // Êµ¼Ê×ª»»
+    // å®é™…è½¬æ¢
     MultiByteToWideChar(
         CP_UTF8, 0, str.c_str(), -1, buffer, len
     );
