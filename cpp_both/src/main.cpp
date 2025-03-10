@@ -32,6 +32,8 @@ void show_results(std::vector<Detection> boxes, cv::Mat& image, bool bDraw) {
 }
 
 int main() {
+    // Caution: Input size, output size and number of classes is hard-coded in YoloDetector.cpp, and number of classes is 4 in this case
+    // If your model uses a different input/output size or number of classes, change them thoroughly or make it general.
     // 初始化检测器
     std::string model_path = "F:/YOLO/yolo11/rust/yolo_self/weights/yolo11n.torchscript";
     YoloDetector detector(TORCHSCRIPT, model_path, 0.35, 0.45);
